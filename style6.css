@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Using Poppins from Google Fonts */
+    background-color: #1a1a1a; /* Very dark background */
+    color: #f0f0f0; /* Light text color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    /* Add subtle background pattern or lighting effect as seen in the image */
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(50, 100, 200, 0.1) 0%, rgba(50, 100, 200, 0) 70%),
+        radial-gradient(circle at 90% 80%, rgba(200, 50, 100, 0.1) 0%, rgba(200, 50, 100, 0) 70%);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333; /* Dark gray for navbar */
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Match content width */
+    margin: 0 auto;
+    border-bottom: 3px solid #000; /* Dark border below navbar */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #fff;
+    padding-left: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for logo */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.navbar nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #fff;
+}
+
+/* Dropdown Menu */
+.dropdown .arrow-down {
+    border: solid #ccc;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%; /* Position below the parent li */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #eee;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Content Area */
+.content-area {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent dark background for content */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Stronger shadow for the content area */
+    border: 1px solid #444; /* Subtle border */
+}
+
+.section {
+    margin-bottom: 40px;
+    padding: 15px;
+    background-color: #222; /* Darker background for each section */
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+    border: 1px solid #333;
+}
+
+.section h2 {
+    color: #eee;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.album-row {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling for the album rows */
+    gap: 20px; /* Space between album items */
+    padding-bottom: 15px; /* Space for scrollbar if it appears */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #555 #333; /* For Firefox */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.album-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.album-row::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.album-row::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+.album-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 150px; /* Fixed width for each album/song item */
+    background-color: #333; /* Dark background for each item */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow for items */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 10px; /* Space for title */
+}
+
+.album-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.album-item img {
+    width: 100%;
+    height: 150px; /* Square image */
+    object-fit: cover; /* Ensure image covers the area */
+    border-bottom: 1px solid #444; /* Separator for image and title */
+}
+
+.album-item .album-title {
+    font-size: 0.9em;
+    color: #ddd;
+    margin: 10px 5px 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar nav ul li {
+        padding: 5px 0;
+        text-align: center;
+        width: 100%;
+    }
+    .dropdown-content {
+        position: static; /* Make dropdown content flow with the document */
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .content-area {
+        padding: 15px;
+    }
+    .album-item {
+        width: 120px; /* Smaller items on smaller screens */
+        height: auto;
+    }
+    .album-item img {
+        height: 120px;
+    }
+}
